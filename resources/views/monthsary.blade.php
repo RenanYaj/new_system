@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monthsary Love Portal ❤️</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>❤️</text></svg>">
+    <link rel="stylesheet" href="{{ asset('monthsary-styles.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen active">
+        <div class="loading-content">
+            <div class="heart-loader">
+                <div class="heart"></div>
+            </div>
+            <p class="loading-text">Preparing something special...</p>
+        </div>
+    </div>
+
+    <!-- Background Particles -->
+    <div id="particles-container"></div>
+
+    <!-- Page 1: Date Verification -->
+    <section id="page-verification" class="page active">
+        <div class="container">
+            <div class="header">
+                <div class="shield-heart" id="easter-egg-trigger">
+                    <svg width="50" height="50" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="#01AEF0"/>
+                        <path d="M12 8v8M8 12h8" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <h1 class="main-title">RELATIONSHIP AUTHENTICATION PORTAL</h1>
+                <p class="subtitle">Secure Relationship Verification System</p>
+            </div>
+
+            <div class="card glassmorphism">
+                <div class="card-header">
+                    <h2>💙 MONTHSARY VERIFICATION</h2>
+                </div>
+                <div class="card-body">
+                    <p class="verification-text">Before you continue, we need to verify something very important.</p>
+                    <p class="verification-text">Please enter the date our story officially began.</p>
+                    
+                    <div class="input-group">
+                        <input type="date" id="date-input" class="date-input" placeholder="Select our special date">
+                        <p class="error-message" id="date-error" style="display: none; color: #FF6B6B; font-weight: 600; margin-top: 15px; font-size: 1.1rem;"></p>
+                    </div>
+
+                    <button class="btn btn-primary" id="verify-btn">
+                        VERIFY DATE 💙
+                    </button>
+
+                    <p class="security-note">🔒 Your relationship information is completely confidential.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page 2: Verification Process -->
+    <section id="page-verification-process" class="page">
+        <div class="container">
+            <div class="card glassmorphism">
+                <div class="card-header">
+                    <h2>🔍 VERIFYING...</h2>
+                </div>
+                <div class="card-body">
+                    <p class="process-text" id="process-message">Connecting to relationship database...</p>
+                    
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="progress-bar"></div>
+                    </div>
+                    <p class="progress-text" id="progress-text">0%</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page 3: Billing Page -->
+    <section id="page-billing" class="page">
+        <div class="container">
+            <div class="header">
+                <h1 class="main-title">MONTHSARY FINANCIAL SERVICES</h1>
+            </div>
+
+            <div class="card glassmorphism">
+                <div class="card-header">
+                    <h2>🧾 MONTHSARY BILLING STATEMENT</h2>
+                </div>
+                <div class="card-body">
+                    <div class="invoice-info">
+                        <p><strong>Invoice No:</strong> LOVE-2026-007</p>
+                        <p><strong>Billing Period:</strong> One Very Special Month ❤️</p>
+                    </div>
+
+                    <div class="billing-items">
+                        <div class="billing-item">
+                            <span>Love Subscription</span>
+                            <span>₱999,999</span>
+                        </div>
+                        <div class="billing-item">
+                            <span>Unlimited Hugs</span>
+                            <span>₱500,000</span>
+                        </div>
+                        <div class="billing-item">
+                            <span>Random Kisses</span>
+                            <span>₱250,000</span>
+                        </div>
+                        <div class="billing-item">
+                            <span>Emotional Support</span>
+                            <span>₱350,000</span>
+                        </div>
+                        <div class="billing-item">
+                            <span>Listening to your Rants</span>
+                            <span>₱150,000</span>
+                        </div>
+                        <div class="billing-item special">
+                            <span>Being My Favorite Person</span>
+                            <span>PRICELESS</span>
+                        </div>
+                        <div class="billing-total">
+                            <span><strong>TOTAL:</strong></span>
+                            <span><strong>₱2,249,999</strong></span>
+                        </div>
+                    </div>
+
+                    <div class="payment-section">
+                        <h3>PAYMENT REQUIRED</h3>
+                        <p>Please select your preferred payment method.</p>
+                        
+                        <div class="payment-buttons">
+                            <button class="btn btn-payment" data-payment="credit">💳 CREDIT CARD</button>
+                            <button class="btn btn-payment" data-payment="gcash">💰 GCASH</button>
+                            <button class="btn btn-payment" data-payment="love">❤️ PAY WITH LOVE</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page 4: Payment Processing -->
+    <section id="page-payment-process" class="page">
+        <div class="container">
+            <div class="card glassmorphism">
+                <div class="card-body text-center">
+                    <h2 id="payment-status-icon">⏳</h2>
+                    <h3 id="payment-status-text">Processing payment...</h3>
+                    <p id="payment-status-message"></p>
+                    <button class="btn btn-primary hidden" id="claim-free-btn">CLAIM MY FREE MONTHSARY 🎁</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page 5: The Trick Question -->
+    <section id="page-trick-question" class="page">
+        <div class="container">
+            <div class="card glassmorphism trick-card">
+                <div class="card-header">
+                    <h2>⚠️ ONE LAST QUESTION</h2>
+                    <p class="subtitle">This question will determine your relationship status.</p>
+                </div>
+                <div class="card-body">
+                    <h3 class="question-text">Do you still want to be my girlfriend for another month? 🥺</h3>
+                    
+                    <div class="button-container">
+                        <button class="btn btn-yes" id="yes-btn">YES ❤️</button>
+                        <button class="btn btn-no" id="no-btn">NO 😏</button>
+                    </div>
+
+                    <p class="attempt-message" id="attempt-message"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page 6: Romantic Reveal -->
+    <section id="page-reveal" class="page">
+        <div class="container">
+            <div class="confetti-container" id="confetti-container"></div>
+            
+            <div class="card glassmorphism reveal-card">
+                <div class="card-header">
+                    <h1 class="celebration-title">🎉 CONGRATULATIONS! 🎉</h1>
+                    <p class="subtitle">Your monthsary subscription has been successfully renewed. ❤️</p>
+                </div>
+                <div class="card-body">
+                    <div class="subscription-info">
+                        <div class="info-item">
+                            <strong>Duration:</strong>
+                            <span>Another Month/Year ❤️</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Renewal:</strong>
+                            <span>Automatic</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Cancellation:</strong>
+                            <span>Absolutely Not 😌</span>
+                        </div>
+                    </div>
+
+                    <div class="transition-text">
+                        <p class="fade-in-text">But seriously...</p>
+                        <p class="fade-in-text delay-1">Thank you for choosing me.</p>
+                        <p class="fade-in-text delay-2">Thank you for staying.</p>
+                        <p class="fade-in-text delay-3">Thank you for all the memories, laughter, random conversations, little arguments, and beautiful moments we've shared.</p>
+                        <p class="fade-in-text delay-4">Every month with you is another month I get to know you, appreciate you, and love you even more.</p>
+                        <p class="fade-in-text delay-5"><strong>Happy Monthsary, Love. ❤️</strong></p>
+                    </div>
+
+                    <button class="btn btn-primary" id="open-surprise-btn">OPEN YOUR SURPRISE 🎁</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page 7: Memory Gallery -->
+    <section id="page-memories" class="page">
+        <div class="container">
+            <h1 class="section-title">OUR LITTLE STORY ❤️</h1>
+            
+            <div class="gallery-grid">
+                <div class="gallery-card glassmorphism">
+                    <div class="gallery-image">
+                        <img src="pic1.jpg" alt="Our First Picture" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%2301AEF0%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22white%22 font-family=%22Arial%22 font-size=%2224%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22%3EPhoto 1%3C/text%3E%3C/svg%3E'">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Random Photo </h3>
+                        <p>EKAY love team yarn!!.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card glassmorphism">
+                    <div class="gallery-image">
+                        <img src="pic 2.jpg" alt="Our Random Moments" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%2322C55E%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22white%22 font-family=%22Arial%22 font-size=%2224%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22%3EPhoto 2%3C/text%3E%3C/svg%3E'">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Random Moments</h3>
+                        <p>❤️❤️❤️</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card glassmorphism">
+                    <div class="gallery-image">
+                        <img src="pic3.jpg" alt="Our Adventures" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23087EA4%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22white%22 font-family=%22Arial%22 font-size=%2224%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22%3EPhoto 3%3C/text%3E%3C/svg%3E'">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Me & You</h3>
+                        <p>Anywhere is better when I'm with you.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card glassmorphism">
+                    <div class="gallery-image">
+                        <img src="pic4.jpg" alt="Special Moments" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%2301AEF0%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22white%22 font-family=%22Arial%22 font-size=%2224%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22%3EPhoto 4%3C/text%3E%3C/svg%3E'">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Graduation Moments</h3>
+                        <p>Every moment with you is special.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card glassmorphism">
+                    <div class="gallery-image">
+                        <img src="pic5.jpg" alt="Together" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%2322C55E%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22white%22 font-family=%22Arial%22 font-size=%2224%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22%3EPhoto 5%3C/text%3E%3C/svg%3E'">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Kain Together</h3>
+                        <p>My favorite place is next to you.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card glassmorphism">
+                    <div class="gallery-image">
+                        <img src="pic6.jpg" alt="Us" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23087EA4%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22white%22 font-family=%22Arial%22 font-size=%2224%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22%3EPhoto 6%3C/text%3E%3C/svg%3E'">
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Us</h3>
+                        <p>This is my favorite story.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="navigation-buttons">
+                <button class="btn btn-secondary" id="back-to-reveal-btn">← BACK</button>
+                <button class="btn btn-primary" id="continue-to-timeline-btn">CONTINUE →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page 8: Timeline -->
+    <section id="page-timeline" class="page">
+        <div class="container">
+            <h1 class="section-title">OUR STORY SO FAR</h1>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-icon">❤️</div>
+                    <div class="timeline-content glassmorphism">
+                        <h3>First Meeting</h3>
+                        <p>Where everything started.</p>
+                        <span class="timeline-date" id="first-meeting-date">January 2026</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon">💬</div>
+                    <div class="timeline-content glassmorphism">
+                        <h3>First Conversation</h3>
+                        <p>The conversation that started something beautiful.</p>
+                        <span class="timeline-date" id="first-conversation-date">January 2026</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon">📱</div>
+                    <div class="timeline-content glassmorphism">
+                        <h3>First Chat</h3>
+                        <p>The beginning of countless messages.</p>
+                        <span class="timeline-date" id="first-chat-date">January 2026</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon">🥰</div>
+                    <div class="timeline-content glassmorphism">
+                        <h3>First Date</h3>
+                        <p>A memory I'll always keep.</p>
+                        <span class="timeline-date" id="first-date-date">February 2026</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon">📸</div>
+                    <div class="timeline-content glassmorphism">
+                        <h3>First Picture Together</h3>
+                        <p>One picture, thousands of memories.</p>
+                        <span class="timeline-date" id="first-picture-date">February 2026</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon">❤️</div>
+                    <div class="timeline-content glassmorphism">
+                        <h3>First Monthsary</h3>
+                        <p>The first month of our love.</p>
+                        <span class="timeline-date" id="first-monthsary-date">March 2026</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon">💙</div>
+                    <div class="timeline-content glassmorphism special">
+                        <h3>Today</h3>
+                        <p>Still choosing you.</p>
+                        <span class="timeline-date" id="today-date">Loading...</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="navigation-buttons">
+                <button class="btn btn-secondary" id="back-to-memories-btn">← BACK</button>
+                <button class="btn btn-primary" id="continue-to-reasons-btn">CONTINUE →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page 9: Things I Love About You -->
+    <section id="page-reasons" class="page">
+        <div class="container">
+            <h1 class="section-title">THINGS I LOVE ABOUT YOU ❤️</h1>
+            
+            <div class="reasons-grid">
+                <div class="reason-card glassmorphism">
+                    <div class="reason-icon">😊</div>
+                    <h3>Your Smile</h3>
+                    <p>It can instantly make a bad day better.</p>
+                </div>
+
+                <div class="reason-card glassmorphism">
+                    <div class="reason-icon">💕</div>
+                    <h3>Your Personality</h3>
+                    <p>You're one of the most interesting people I've ever met.</p>
+                </div>
+
+                <div class="reason-card glassmorphism">
+                    <div class="reason-icon">😂</div>
+                    <h3>Your Laugh</h3>
+                    <p>I could listen to it forever.</p>
+                </div>
+
+                <div class="reason-card glassmorphism">
+                    <div class="reason-icon">🥹</div>
+                    <h3>Your Patience</h3>
+                    <p>Especially when dealing with me.</p>
+                </div>
+
+                <div class="reason-card glassmorphism">
+                    <div class="reason-icon">❤️</div>
+                    <h3>Your Little Habits</h3>
+                    <p>Even the weird ones.</p>
+                </div>
+
+                <div class="reason-card glassmorphism">
+                    <div class="reason-icon">💙</div>
+                    <h3>Your Kindness</h3>
+                    <p>One of the things I admire most about you.</p>
+                </div>
+
+                <div class="reason-card glassmorphism">
+                    <div class="reason-icon">🌷</div>
+                    <h3>Your Presence</h3>
+                    <p>Everything feels better when you're around.</p>
+                </div>
+
+                <div class="reason-card glassmorphism special">
+                    <div class="reason-icon">✨</div>
+                    <h3>Simply You</h3>
+                    <p>I don't need another reason.</p>
+                </div>
+            </div>
+
+            <div class="navigation-buttons">
+                <button class="btn btn-secondary" id="back-to-timeline-btn">← BACK</button>
+                <button class="btn btn-primary" id="continue-to-letter-btn">CONTINUE →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page 10: Love Letter -->
+    <section id="page-letter" class="page">
+        <div class="container">
+            <h1 class="section-title">A LETTER FOR YOU MYLOVE💌</h1>
+            
+            <div class="letter-card glassmorphism">
+                <div class="letter-content">
+                    <p class="letter-greeting">Mi Felicidad❤️,</p>
+                    
+                    <p>Happy Monthsary.</p>
+                    
+                    <p>HI LALOVE GOODMORNING GOODAFTERNOON OR GOODEVENING KUNG KANUS A MANI NIMO MABASAHAN HAHAHHAHAHA HAPPY HAPPY 4 YEARS AND 4 MONTHS PALANGGA❤️😙🥰🥰  GRABI DUGAY NAJUD KAAYU TA LANGGA BA AWA RAGUD NA OHH 8 MONTHS NALANG 5 YEARS NAPUD TA AWHAHAHAHHAHA CONGRATULATIONS KAY NAABOT KA ANI NGA SLIDE SA AKONG PA SUPRAYS WEBSITE LALOVE</p>
+                    
+                    <p>GENA BUHAT RABA NAKO NI NGA WEBSITE DURING SA FREE TIME NAKOS OFFICE HAHAHAHHAHA THEN NAG HUNA2 KO UG E PRANK BA TIKA NGA NA LIMTAN NAPUD NAKO OR WHAT? HAHAHAHAH SIGE E PRANK TIKA ANA PARA KILIGON KA SA AKONG PA SUPRAYS OR MA SUKO NAPUD TIBUOK ADLAW?😭😭😭</p>
+                    
+                    <p>PERO BITAW LALOVE DLI RA KAAYU NAKO TAASON LALOVE I JUST WANT YOU TO KNOW NGA I WILL ALWAYS CHOOSE YOU AND LOVE YOU ALWAYS AND FOREVER PALANGGA NAKO AND WALA NAKOY LAING E LOVE KUNDILI IKAW AT IKAW LANG PALANGGA NO OTHER WOMAN KUNDILI IKAW RAMAN🥰❤️❤️ CHARR RHYME OHH HAHAHAHHA</p>
+                    
+                    <p>BITAW LALOVE THANKFUL KAAYU KO ALWAYS NGA MADUNGAGAN ATONG MONTHS NGA MAGKAUBAN TA LALOVE AND SUNOD KAY KASAL NAJUD NA LANGGA NGA MONTHSARY AND ANNIVERSARY🤭🤭❤️❤️ </p>
+                    
+                    <p>SORRY KAAYU SAHAY LANGGA SA AKONG MGA PAGKA BADLUNGON LALOVE NAKO UNTA TAAS2 PA IMOHANG PASENSYA LALOVE NAKO HA?🥺🥺 BASTA HINUMDUMI PERMI LALOVE LOVE NA LOVE NA LOVE KAAYU TIKA ALWAYS HA?</p>
+                    
+                    <p>E DUNGAN RA NATO ATONG LAAG NIG KA 8 LALOVE AS NA SABUTAN NATO LANGGA HA?🥰❤️❤️ DLI RA KAYU NAKO TAASON LALOVE NAKO ILOVEYOUALWAYS MI FELICIDAD MY LOVE SUPER DUPER LOVE KAAYU PALANGGA😙❤️❤️ </p>
+                    
+                    <p>HAPPY MONTHSARY ULIT PALANGGA AND MAG AMPING KA DIRA ALWAYS LALOVE NAKO HA? AMPINGI IMOHANG KAUGALINGON LALOVE NAKO😙❤️</p>
+                    
+                    <p class="letter-closing">MWAMWAA KA SA AKIN 😙😙😙</p>
+                    
+                    <p class="letter-signature" id="letter-signature">— Renan Fogi</p>
+                </div>
+            </div>
+
+            <div class="navigation-buttons">
+                <button class="btn btn-secondary" id="back-to-reasons-btn">← BACK</button>
+                <button class="btn btn-primary" id="continue-to-song-btn">CONTINUE →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page 11: Our Video -->
+    <section id="page-song" class="page">
+        <div class="container">
+            <h1 class="section-title">OUR VIDEO TOGETHER ❤️ </h1>
+            
+            <div class="video-player glassmorphism">
+                <div class="video-container">
+                    <video id="video-player" controls>
+                        <source src="{{ asset('video.mp4') }}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                
+                <div class="video-info">
+                    <h2 id="video-title">Our Special Moments</h2>
+                    <p id="video-description">A collection of our favorite memories together ❤️</p>
+                </div>
+            </div>
+
+            <div class="navigation-buttons">
+                <button class="btn btn-secondary" id="back-to-letter-btn">← BACK</button>
+                <button class="btn btn-primary" id="continue-to-final-btn">CONTINUE →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page 12: Final Message -->
+    <section id="page-final" class="page">
+        <div class="final-background">
+            <div class="container">
+                <div class="final-content">
+                    <h2 class="final-intro">One more thing...</h2>
+                    
+                    <div class="final-messages">
+                        <p class="final-message">I don't need a perfect relationship.</p>
+                        <p class="final-message">I don't need perfect days.</p>
+                        <p class="final-message">I just want someone who keeps choosing me...</p>
+                        <p class="final-message">And if you'll let me...</p>
+                        <p class="final-message">I'd like to keep choosing you.</p>
+                    </div>
+                    
+                    <div class="final-timeline">
+                        <p class="timeline-text">Today.</p>
+                        <p class="timeline-text">Tomorrow.</p>
+                        <p class="timeline-text">And hopefully...</p>
+                        <p class="timeline-text">Every monthsary after this.</p>
+                    </div>
+                    
+                    <h1 class="final-declaration">❤️ I LOVE YOU ❤️</h1>
+                    
+                    <h2 class="final-wish">HAPPY 52nd MONTHSARY, LOVE.</h2>
+                    
+                    <div class="final-buttons">
+                        <button class="btn btn-primary" id="replay-btn">REPLAY OUR STORY 🔄</button>
+                    </div>
+                    
+                    <p class="made-with-love">Made this ❤️ just for you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Easter Egg Modal -->
+    <div id="easter-egg-modal" class="modal">
+        <div class="modal-content glassmorphism">
+            <h2>Okay okay... you found the secret. 😂❤️</h2>
+            <p>Here's another reason I love you:</p>
+            <p><strong>You are curious.</strong></p>
+            <button class="btn btn-primary" id="close-easter-egg">Close</button>
+        </div>
+    </div>
+
+    <!-- Image Lightbox Modal -->
+    <div id="image-lightbox" class="image-lightbox">
+        <div class="lightbox-content">
+            <span class="lightbox-close" id="lightbox-close">✕</span>
+            <img id="lightbox-image" src="" alt="Full size image">
+            <p class="lightbox-caption" id="lightbox-caption"></p>
+        </div>
+    </div>
+
+    <script src="{{ asset('monthsary-config.js') }}?v={{ now()->timestamp }}"></script>
+    <script src="{{ asset('monthsary-script.js') }}?v={{ now()->timestamp }}"></script>
+</body>
+</html>
